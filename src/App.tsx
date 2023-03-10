@@ -6,11 +6,24 @@ import styles from './App.module.css'
 
 import './global.css'
 
-// author: { avatar_url: '', name: '',  role: ''}
-// publishedAt: Date
-// content: String
 
-const posts = [
+interface Posts {
+  id: number;
+  author:  {
+    avatarUrl: string;
+    name: string;
+    role: string;
+  },
+  content: {
+    type: 'paragraph' | 'link';
+    content: string;
+  }[],
+  publishedAt: Date;
+}
+
+
+
+const posts: Posts[] = [
   {
     id: 1,
     author: {
